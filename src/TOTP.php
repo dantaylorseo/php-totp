@@ -86,7 +86,7 @@ class TOTP
         if (strlen($secret) < 16 || 0 != strlen($secret) % 8) {
             throw new \Exception('secret length must >= 16 || %8==0');
         }
-        if (1 === preg_match('/[^a-z2-7]/i', $secret)) {
+        if (1 === preg_match('/[^a-z2-7=]/i', $secret)) {
             throw new \Exception('sercret must be of base32');
         }
         if ($digits < 6 || $digits > 8) {
